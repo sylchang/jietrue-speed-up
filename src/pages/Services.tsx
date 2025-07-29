@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,14 +10,16 @@ import {
   Shield, 
   Clock,
   CheckCircle,
-  Star
+  Star,
+  Scale,
+  Activity
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
-      category: "腸胃科專科",
+      category: "肝膽腸胃科內科",
       icon: <Stethoscope className="w-8 h-8" />,
       color: "bg-primary",
       services: [
@@ -30,50 +33,6 @@ const Services = () => {
           description: "幽門螺旋桿菌檢測與根除治療",
           features: ["細菌培養", "藥物治療", "復發預防"]
         },
-        {
-          name: "大腸息肉檢查",
-          description: "早期發現與處理大腸息肉，預防大腸癌",
-          features: ["無痛檢查", "即時處理", "定期追蹤"]
-        },
-        {
-          name: "腸躁症治療",
-          description: "腹痛、腹瀉、便秘等腸道功能障礙治療",
-          features: ["症狀評估", "飲食調整", "藥物輔助"]
-        }
-      ]
-    },
-    {
-      category: "皮膚科專科",
-      icon: <Eye className="w-8 h-8" />,
-      color: "bg-accent",
-      services: [
-        {
-          name: "青春痘治療",
-          description: "各種痘痘類型的專業治療與護理指導",
-          features: ["口服藥物", "外用治療", "護膚建議"]
-        },
-        {
-          name: "濕疹皮膚炎",
-          description: "異位性皮膚炎、接觸性皮膚炎診療",
-          features: ["過敏原檢測", "藥物治療", "日常照護"]
-        },
-        {
-          name: "落髮治療",
-          description: "雄性禿、圓形禿等各種落髮問題治療",
-          features: ["毛髮檢測", "藥物治療", "生髮療程"]
-        },
-        {
-          name: "皮膚腫瘤",
-          description: "良性與惡性皮膚腫瘤的診斷與處理",
-          features: ["皮膚鏡檢查", "切片檢查", "手術切除"]
-        }
-      ]
-    },
-    {
-      category: "無痛檢查",
-      icon: <Shield className="w-8 h-8" />,
-      color: "bg-primary-light",
-      services: [
         {
           name: "無痛胃鏡檢查",
           description: "舒適安全的上消化道內視鏡檢查",
@@ -95,6 +54,61 @@ const Services = () => {
           name: "肝纖維化掃描",
           description: "非侵入性肝纖維化程度評估",
           features: ["快速檢查", "精準評估", "無痛無創"]
+        }
+      ]
+    },
+    {
+      category: "減重與代謝管理",
+      icon: <Scale className="w-8 h-8" />,
+      color: "bg-accent",
+      services: [
+        {
+          name: "GLP-1 減重療程",
+          description: "司美格魯肽、善纖達等新一代減重藥物治療",
+          features: ["專業評估", "個人化療程", "定期追蹤"],
+          highlight: true
+        },
+        {
+          name: "內視鏡減重",
+          description: "胃內水球、內視鏡縮胃等微創減重手術",
+          features: ["微創手術", "安全有效", "快速恢復"]
+        },
+        {
+          name: "營養諮詢",
+          description: "專業營養師提供個人化飲食計劃",
+          features: ["營養評估", "飲食設計", "長期指導"]
+        },
+        {
+          name: "代謝症候群管理",
+          description: "高血壓、糖尿病、高血脂的綜合管理",
+          features: ["血糖監測", "藥物調整", "生活指導"]
+        }
+      ]
+    },
+    {
+      category: "皮膚科",
+      icon: <Eye className="w-8 h-8" />,
+      color: "bg-secondary",
+      services: [
+        {
+          name: "青春痘治療",
+          description: "各種痘痘類型的專業治療與護理指導",
+          features: ["口服藥物", "外用治療", "護膚建議"]
+        },
+        {
+          name: "濕疹皮膚炎",
+          description: "異位性皮膚炎、接觸性皮膚炎診療",
+          features: ["過敏原檢測", "藥物治療", "日常照護"]
+        },
+        {
+          name: "落髮治療",
+          description: "雄性禿、圓形禿等各種落髮問題治療",
+          features: ["毛髮檢測", "藥物治療", "生髮療程"]
+        },
+        {
+          name: "皮膚腫瘤檢查",
+          description: "良性與惡性皮膚腫瘤的診斷與處理",
+          features: ["皮膚鏡檢查", "切片檢查", "手術切除"]
         }
       ]
     },
@@ -129,12 +143,13 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gradient-card">
+      <Navigation />
       {/* Header */}
       <section className="bg-gradient-hero text-primary-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">診療項目</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            提供專業的腸胃科、皮膚科診療以及先進的無痛檢查與醫學美容服務
+            提供專業的肝膽腸胃科內科、減重與代謝管理、皮膚科與醫學美容服務
           </p>
         </div>
       </section>
