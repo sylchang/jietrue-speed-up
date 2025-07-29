@@ -9,10 +9,12 @@ const Navigation = () => {
 
   const navItems = [
     { href: "/", label: "首頁" },
+    { href: "/news", label: "最新消息" },
     { href: "/services", label: "診療項目" },
+    { href: "/about", label: "關於傑初" },
     { href: "/doctors", label: "醫師陣容" },
     { href: "/hours", label: "門診時間" },
-    { href: "/contact", label: "聯絡資訊" },
+    { href: "/health-info", label: "衛教資訊" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
