@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import StickyActions from "@/components/StickyActions";
 import Hero from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -65,6 +66,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <StickyActions />
       <Hero />
       
       {/* Features Section */}

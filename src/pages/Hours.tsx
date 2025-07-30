@@ -1,3 +1,5 @@
+import Navigation from "@/components/Navigation";
+import StickyActions from "@/components/StickyActions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -74,6 +76,8 @@ const Hours = () => {
 
   return (
     <div className="min-h-screen bg-gradient-card">
+      <Navigation />
+      <StickyActions />
       {/* Header */}
       <section className="bg-gradient-hero text-primary-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

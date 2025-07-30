@@ -1,3 +1,5 @@
+import Navigation from "@/components/Navigation";
+import StickyActions from "@/components/StickyActions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,7 +10,7 @@ import {
   Phone, 
   Clock, 
   Mail,
-  Navigation,
+  Navigation as NavigationIcon,
   Car,
   Bus,
   Train,
@@ -42,6 +44,8 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-card">
+      <Navigation />
+      <StickyActions />
       {/* Header */}
       <section className="bg-gradient-hero text-primary-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -115,7 +119,7 @@ const Contact = () => {
               <Card className="shadow-elegant">
                 <CardHeader>
                   <CardTitle className="text-xl text-medical-text flex items-center space-x-2">
-                    <Navigation className="w-5 h-5 text-primary" />
+                    <NavigationIcon className="w-5 h-5 text-primary" />
                     <span>交通方式</span>
                   </CardTitle>
                 </CardHeader>

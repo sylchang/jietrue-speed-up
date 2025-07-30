@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import StickyActions from "@/components/StickyActions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -63,6 +64,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <StickyActions />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero text-primary-foreground">
