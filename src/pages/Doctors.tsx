@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import StickyActions from "@/components/StickyActions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -74,163 +75,166 @@ const Doctors = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-card">
+    <div className="min-h-screen bg-gradient-card flex flex-col">
       <Navigation />
-      <StickyActions />
-      {/* Header */}
-      <section className="bg-gradient-hero text-primary-foreground py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">醫師陣容</h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            資深專科醫師團隊，提供專業、安心的醫療服務
-          </p>
-        </div>
-      </section>
+      <main className="flex-1">
+        {/* Header */}
+        <section className="bg-gradient-hero text-primary-foreground py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4">醫師陣容</h1>
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+              資深專科醫師團隊，提供專業、安心的醫療服務
+            </p>
+          </div>
+        </section>
 
-      {/* Doctors */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {doctors.map((doctor, index) => (
-              <Card 
-                key={doctor.name} 
-                className={`group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 animate-fade-in ${
-                  doctor.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <CardContent className="p-8">
-                  {/* Doctor Header */}
-                  <div className="flex items-start space-x-6 mb-8">
-                    <div className="w-24 h-24 bg-gradient-hero rounded-full flex items-center justify-center flex-shrink-0">
-                      <Users className="w-12 h-12 text-primary-foreground" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <h3 className="text-2xl font-bold text-medical-text">{doctor.name}</h3>
-                        {doctor.highlight && (
-                          <Badge className="bg-primary text-primary-foreground">
-                            特聘醫師
-                          </Badge>
-                        )}
+        {/* Doctors */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {doctors.map((doctor, index) => (
+                <Card 
+                  key={doctor.name} 
+                  className={`group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 animate-fade-in ${
+                    doctor.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
+                  }`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <CardContent className="p-8">
+                    {/* Doctor Header */}
+                    <div className="flex items-start space-x-6 mb-8">
+                      <div className="w-24 h-24 bg-gradient-hero rounded-full flex items-center justify-center flex-shrink-0">
+                        <Users className="w-12 h-12 text-primary-foreground" />
                       </div>
-                      <p className="text-lg text-primary font-medium mb-3">{doctor.title}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {doctor.specialties.map((specialty, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs">
-                            {specialty}
-                          </Badge>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <h3 className="text-2xl font-bold text-medical-text">{doctor.name}</h3>
+                          {doctor.highlight && (
+                            <Badge className="bg-primary text-primary-foreground">
+                              特聘醫師
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-lg text-primary font-medium mb-3">{doctor.title}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {doctor.specialties.map((specialty, idx) => (
+                            <Badge key={idx} variant="outline" className="text-xs">
+                              {specialty}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Education */}
+                    <div className="mb-6">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <GraduationCap className="w-5 h-5 text-primary" />
+                        <h4 className="font-semibold text-medical-text">學歷與訓練</h4>
+                      </div>
+                      <ul className="space-y-1 text-sm text-foreground">
+                        {doctor.education.map((edu, idx) => (
+                          <li key={idx} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{edu}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Experience */}
+                    <div className="mb-6">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Award className="w-5 h-5 text-primary" />
+                        <h4 className="font-semibold text-medical-text">經歷與認證</h4>
+                      </div>
+                      <ul className="space-y-1 text-sm text-foreground">
+                        {doctor.experience.map((exp, idx) => (
+                          <li key={idx} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{exp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Expertise */}
+                    <div className="mb-6">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Award className="w-5 h-5 text-primary" />
+                        <h4 className="font-semibold text-medical-text">專精領域</h4>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        {doctor.expertise.map((skill, idx) => (
+                          <div key={idx} className="flex items-center space-x-2 text-sm">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-foreground">{skill}</span>
+                          </div>
                         ))}
                       </div>
                     </div>
-                  </div>
 
-                  {/* Education */}
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <GraduationCap className="w-5 h-5 text-primary" />
-                      <h4 className="font-semibold text-medical-text">學歷與訓練</h4>
+                    {/* Schedule */}
+                    <div className="p-4 bg-muted rounded-lg">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Clock className="w-4 h-4 text-primary" />
+                        <span className="font-medium text-medical-text">門診時間</span>
+                      </div>
+                      <p className="text-sm text-foreground">{doctor.schedule}</p>
                     </div>
-                    <ul className="space-y-1 text-sm text-foreground">
-                      {doctor.education.map((edu, idx) => (
-                        <li key={idx} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span>{edu}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
-                  {/* Experience */}
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <Award className="w-5 h-5 text-primary" />
-                      <h4 className="font-semibold text-medical-text">經歷與認證</h4>
-                    </div>
-                    <ul className="space-y-1 text-sm text-foreground">
-                      {doctor.experience.map((exp, idx) => (
-                        <li key={idx} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <span>{exp}</span>
-                        </li>
-                      ))}
-                    </ul>
+            {/* Contact Section */}
+            <div className="mt-20 bg-gradient-hero rounded-2xl p-8 lg:p-12 text-center text-primary-foreground">
+              <div className="max-w-3xl mx-auto">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4">預約專科門診</h3>
+                <p className="text-lg text-primary-foreground/90 mb-8">
+                  歡迎來電預約或線上掛號，我們將為您安排最適合的診療時間
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="flex items-center justify-center space-x-2">
+                    <Phone className="w-5 h-5" />
+                    <span>02-8921-2345</span>
                   </div>
-
-                  {/* Expertise */}
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <Award className="w-5 h-5 text-primary" />
-                      <h4 className="font-semibold text-medical-text">專精領域</h4>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {doctor.expertise.map((skill, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-sm">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-foreground">{skill}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <MapPin className="w-5 h-5" />
+                    <span>新北市中和區</span>
                   </div>
-
-                  {/* Schedule */}
-                  <div className="p-4 bg-muted rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Clock className="w-4 h-4 text-primary" />
-                      <span className="font-medium text-medical-text">門診時間</span>
-                    </div>
-                    <p className="text-sm text-foreground">{doctor.schedule}</p>
+                  <div className="flex items-center justify-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>週一至週六</span>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Contact Section */}
-          <div className="mt-20 bg-gradient-hero rounded-2xl p-8 lg:p-12 text-center text-primary-foreground">
-            <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4">預約專科門診</h3>
-              <p className="text-lg text-primary-foreground/90 mb-8">
-                歡迎來電預約或線上掛號，我們將為您安排最適合的診療時間
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <span>02-8921-2345</span>
                 </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <MapPin className="w-5 h-5" />
-                  <span>新北市中和區</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>週一至週六</span>
-                </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  className="bg-white/90 text-primary hover:bg-white"
-                  asChild
-                >
-                  <Link to="/contact">線上預約</Link>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white/30 text-primary-foreground hover:bg-white/10"
-                  asChild
-                >
-                  <Link to="/hours">查看門診時間</Link>
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    variant="secondary"
+                    className="bg-white/90 text-primary hover:bg-white"
+                    asChild
+                  >
+                    <Link to="/contact">線上預約</Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-white/30 text-primary-foreground hover:bg-white/10"
+                    asChild
+                  >
+                    <Link to="/hours">查看門診時間</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
+      <Footer />
+      <StickyActions />
     </div>
   );
 };

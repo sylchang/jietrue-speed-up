@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import StickyActions from "@/components/StickyActions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -143,105 +144,108 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-card">
+    <div className="min-h-screen bg-gradient-card flex flex-col">
       <Navigation />
-      <StickyActions />
-      {/* Header */}
-      <section className="bg-gradient-hero text-primary-foreground py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">診療項目</h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            提供專業的肝膽腸胃科內科、減重與代謝管理、皮膚科與醫學美容服務
-          </p>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {services.map((category, categoryIndex) => (
-              <div key={category.category} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 0.2}s` }}>
-                <div className="text-center mb-12">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${category.color} text-white mb-4`}>
-                    {category.icon}
-                  </div>
-                  <h2 className="text-3xl font-bold text-medical-text mb-2">{category.category}</h2>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {category.services.map((service, serviceIndex) => (
-                    <Card 
-                      key={service.name} 
-                      className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 ${
-                        service.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
-                      }`}
-                    >
-                      <CardHeader className="pb-4">
-                        <div className="flex items-center justify-between">
-                          <CardTitle className="text-lg text-medical-text group-hover:text-primary transition-colors">
-                            {service.name}
-                          </CardTitle>
-                          {service.highlight && (
-                            <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                              <Star className="w-3 h-3 mr-1" />
-                              推薦
-                            </Badge>
-                          )}
-                        </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {service.description}
-                        </p>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-2">
-                          {service.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center space-x-2">
-                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                              <span className="text-sm text-foreground">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            ))}
+      <main className="flex-1">
+        {/* Header */}
+        <section className="bg-gradient-hero text-primary-foreground py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4">診療項目</h1>
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+              提供專業的肝膽腸胃科內科、減重與代謝管理、皮膚科與醫學美容服務
+            </p>
           </div>
+        </section>
 
-          {/* CTA Section */}
-          <div className="mt-20 bg-gradient-hero rounded-2xl p-8 lg:p-12 text-center text-primary-foreground">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex items-center justify-center mb-6">
-                <Clock className="w-8 h-8 mr-3" />
-                <h3 className="text-2xl lg:text-3xl font-bold">預約您的健康檢查</h3>
-              </div>
-              <p className="text-lg text-primary-foreground/90 mb-8">
-                我們提供便利的線上預約服務，專業的醫療團隊將為您提供最優質的診療服務
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  className="bg-white/90 text-primary hover:bg-white"
-                  asChild
-                >
-                  <Link to="/contact">立即預約</Link>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white/30 text-primary-foreground hover:bg-white/10"
-                  asChild
-                >
-                  <Link to="/doctors">認識醫師</Link>
-                </Button>
+        {/* Services */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-16">
+              {services.map((category, categoryIndex) => (
+                <div key={category.category} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 0.2}s` }}>
+                  <div className="text-center mb-12">
+                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${category.color} text-white mb-4`}>
+                      {category.icon}
+                    </div>
+                    <h2 className="text-3xl font-bold text-medical-text mb-2">{category.category}</h2>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {category.services.map((service, serviceIndex) => (
+                      <Card 
+                        key={service.name} 
+                        className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 ${
+                          service.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
+                        }`}
+                      >
+                        <CardHeader className="pb-4">
+                          <div className="flex items-center justify-between">
+                            <CardTitle className="text-lg text-medical-text group-hover:text-primary transition-colors">
+                              {service.name}
+                            </CardTitle>
+                            {service.highlight && (
+                              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
+                                <Star className="w-3 h-3 mr-1" />
+                                推薦
+                              </Badge>
+                            )}
+                          </div>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {service.description}
+                          </p>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-2">
+                            {service.features.map((feature, featureIndex) => (
+                              <div key={featureIndex} className="flex items-center space-x-2">
+                                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                                <span className="text-sm text-foreground">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Section */}
+            <div className="mt-20 bg-gradient-hero rounded-2xl p-8 lg:p-12 text-center text-primary-foreground">
+              <div className="max-w-3xl mx-auto">
+                <div className="flex items-center justify-center mb-6">
+                  <Clock className="w-8 h-8 mr-3" />
+                  <h3 className="text-2xl lg:text-3xl font-bold">預約您的健康檢查</h3>
+                </div>
+                <p className="text-lg text-primary-foreground/90 mb-8">
+                  我們提供便利的線上預約服務，專業的醫療團隊將為您提供最優質的診療服務
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    variant="secondary"
+                    className="bg-white/90 text-primary hover:bg-white"
+                    asChild
+                  >
+                    <Link to="/contact">立即預約</Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-white/30 text-primary-foreground hover:bg-white/10"
+                    asChild
+                  >
+                    <Link to="/doctors">認識醫師</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
+      <Footer />
+      <StickyActions />
     </div>
   );
 };
