@@ -13,6 +13,16 @@ import Contact from "./pages/Contact";
 import HealthInfo from "./pages/HealthInfo";
 import NotFound from "./pages/NotFound";
 
+// Blog post pages
+import TirzepatideComparison from "./pages/blog/TirzepatideComparison";
+import GlpComparison from "./pages/blog/GlpComparison";
+import Ozempic from "./pages/blog/Ozempic";
+import HpyloriTest from "./pages/blog/HpyloriTest";
+import AnesthesiaInfo from "./pages/blog/AnesthesiaInfo";
+import MounjaroBlog from "./pages/blog/MounjaroBlog";
+import GastroenteritisRelief from "./pages/blog/GastroenteritisRelief";
+import LowResidueFoodBlog from "./pages/blog/LowResidueFoodBlog";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -29,7 +39,18 @@ const App = () => (
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/hours" element={<Hours />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/health-info" element={<HealthInfo />} />
+          <Route path="/blog" element={<HealthInfo />} />
+          
+          {/* Blog post routes */}
+          <Route path="/tirzepatide-semaglutide-weight-loss-comparison-yonghe-zhonghe" element={<TirzepatideComparison />} />
+          <Route path="/glp1-comparison" element={<GlpComparison />} />
+          <Route path="/ozempic" element={<Ozempic />} />
+          <Route path="/hpylori-test" element={<HpyloriTest />} />
+          <Route path="/anesthesia-info" element={<AnesthesiaInfo />} />
+          <Route path="/mounjaro-blog" element={<MounjaroBlog />} />
+          <Route path="/gastroenteritis-symptoms-relief" element={<GastroenteritisRelief />} />
+          <Route path="/low-residue-convenience-food" element={<LowResidueFoodBlog />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
