@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* OY Clinic Green Color Palette - Based on reference site */
-    --background: 158 30% 91%;
+    --background: 45 66% 97%;
     --foreground: 158 40% 15%;
 
     --card: 0 0% 100%;
@@ -17,10 +17,10 @@
     --popover-foreground: 158 40% 15%;
 
     /* Primary: Deep Teal Green (like OY clinic) */
-    --primary: 158 55% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 158 45% 50%;
-    --primary-dark: 158 65% 25%;
+    --primary: 77.6 27% 87.6%;
+    --primary-foreground: 80 35.5% 18.2%;
+    --primary-light: 78 35% 67%;
+    --primary-dark: 78 35% 67%;
 
     /* Secondary: Warm Beige */
     --secondary: 45 25% 92%;
