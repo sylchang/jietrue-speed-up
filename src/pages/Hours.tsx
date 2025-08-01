@@ -1,3 +1,6 @@
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import StickyActions from "@/components/StickyActions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,20 +15,20 @@ const Hours = () => {
   const specialServices = [
     {
       name: "無痛胃腸鏡檢查",
-      schedule: "週一至週六 上午 (需預約)",
+      schedule: "週一至週六 上午/下午 (需先預約看診)",
       note: "檢查前需空腹8小時",
       icon: <Clock className="w-5 h-5" />
     },
     {
       name: "腹部超音波檢查",
-      schedule: "週一至週六 上午/下午 (需預約)",
+      schedule: "有看診的時間 (不需預約)",
       note: "檢查前需空腹6小時",
       icon: <Calendar className="w-5 h-5" />
     },
     {
       name: "醫學美容療程",
-      schedule: "週二、週四、週六 下午 (需預約)",
-      note: "柯振得醫師親自操作",
+      schedule: "有看診的時間 (需預約)",
+      note: "歡迎預約免費15分鐘醫生諮詢",
       icon: <CheckCircle className="w-5 h-5" />
     }
   ];
@@ -51,6 +54,7 @@ const Hours = () => {
 
   return (
     <div className="min-h-screen bg-gradient-card">
+      <Navigation />
       {/* SEO and Head content - Typically managed by a dedicated <Head> component or layout in frameworks like Next.js */}
       {/* For direct conversion, placed here */}
       <head>
@@ -162,11 +166,7 @@ const Hours = () => {
                   <ul className="space-y-2 text-sm text-foreground">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>現場掛號請於診療開始前30分鐘到達</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>特殊檢查項目請提前電話預約</span>
+                      <span>特殊檢查項目請提前Line/電話預約</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -216,40 +216,42 @@ const Hours = () => {
                   <Phone className="w-6 h-6" />
                   <div className="text-left">
                     <div className="font-semibold">預約專線</div>
-                    <div className="text-primary-foreground/90">02-8921-2345</div>
+                    <div className="text-primary-foreground/90">02-8231-6869</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center space-x-3">
                   <MapPin className="w-6 h-6" />
                   <div className="text-left">
                     <div className="font-semibold">診所地址</div>
-                    <div className="text-primary-foreground/90">新北市中和區</div>
+                    <div className="text-primary-foreground/90">新北市中和區中安街102號</div>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white/90 text-primary hover:bg-white"
-                  asChild
-                >
-                  <Link to="/contact">線上預約</Link>
-                </Button>
+                size="lg"
+                variant="secondary"
+                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                asChild
+              >
+                <Link to="https://line.me/R/ti/p/@928ibhsy">LINE 預約</Link>
+              </Button>
                 <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-primary-foreground hover:bg-white/10"
-                  asChild
-                >
-                  <Link to="/services">查看診療項目</Link>
-                </Button>
+                size="lg"
+                variant="secondary"
+                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                asChild
+              >
+                <Link to="/services">查看診療項目</Link>
+              </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <Footer />
+      <StickyActions />
     </div>
   );
 };

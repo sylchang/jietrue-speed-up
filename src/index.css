@@ -16,11 +16,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 158 40% 15%;
 
-    /* Primary: Deep Teal Green (like OY clinic) */
+    /* Primary: Light Green */
     --primary: 77.6 27% 87.6%;
     --primary-foreground: 80 35.5% 18.2%;
-    --primary-light: 78 35% 67%;
-    --primary-dark: 78 35% 67%;
+    --primary-light: 78 35% 67%; 
+    --primary-dark: 78 35% 57%;
 
     /* Secondary: Warm Beige */
     --secondary: 45 25% 92%;
@@ -28,7 +28,7 @@
 
     /* Muted: Light Green Gray */
     --muted: 154 15% 94%;
-    --muted-foreground: 154 15% 45%;
+    --muted-foreground: 80 35.5% 41%;
 
     /* Accent: Gold for highlights */
     --accent: 45 85% 70%;
@@ -74,6 +74,10 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* 新增按鈕專用顏色 */
+    --btn: 120 17.1% 56.5%;
+    --btn-hover: 120 17.1% 46.5%;
   }
 
   .dark {
@@ -127,6 +131,10 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* 新增按鈕專用顏色 */
+    --btn: 120 17.1% 56.5%;
+    --btn-hover: 120 17.1% 46.5%; /* 懸停時略微變暗 */
   }
 }
 
