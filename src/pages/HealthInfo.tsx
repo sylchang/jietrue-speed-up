@@ -4,60 +4,120 @@ import Footer from "@/components/Footer";
 import StickyActions from "@/components/StickyActions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { Search } from "lucide-react";
 
 const HealthInfo = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("全部");
+
+  const categories = ["全部", "減重新知", "疾病預防", "腸胃保健"];
+
   const blogPosts = [
     {
       title: "【減重突破】猛健樂 (Tirzepatide) vs 善纖達 (Semaglutide)：史上最強瘦瘦針對決",
       excerpt: "《新英格蘭醫學期刊》2024年最新研究揭示猛健樂(Tirzepatide)與善纖達(Semaglutide)在減重效果上的驚人差異！",
       link: "/tirzepatide-semaglutide-weight-loss-comparison-yonghe-zhonghe",
-      image: "https://jietrue.com/wp-content/uploads/2025/05/猛健樂vs善纖達.jpg"
+      image: "https://jietrue.com/wp-content/uploads/2025/05/猛健樂vs善纖達.jpg",
+      category: "減重新知"
     },
     {
       title: "GLP-1 藥物有哪些？猛健樂、瑞備氏、Wegovy（Semaglutide）、Orforglipron 完整比較",
       excerpt: "GLP-1（胰高血糖素樣胜肽-1）藥物因同時兼顧血糖控制和減重效果，成為糖尿病與肥胖治療的熱門選擇。",
       link: "/glp1-comparison",
-      image: "https://jietrue.com/wp-content/uploads/2025/04/GLP-1藥物比較.jpg"
+      image: "https://jietrue.com/wp-content/uploads/2025/04/GLP-1藥物比較.jpg",
+      category: "減重新知"
     },
     {
       title: "司美格魯肽 有望逆轉脂肪肝纖維化",
       excerpt: "在剛發表的 ESSENCE phase III 臨床試驗中，GLP-1 類藥物 司美格魯肽 首次在人體肝切片中證實能有效改善脂肪性肝炎（NASH）所導致的肝纖維化。",
       link: "/ozempic",
-      image: "https://jietrue.com/wp-content/uploads/2025/05/瘦瘦針-減重-瘦瘦筆.png"
+      image: "https://jietrue.com/wp-content/uploads/2025/05/瘦瘦針-減重-瘦瘦筆.png",
+      category: "減重新知"
     },
     {
       title: "幽門螺旋桿菌檢查｜吹氣檢查、糞便、胃鏡取樣一次看懂",
       excerpt: "想檢查是否感染幽門螺旋桿菌（H. pylori）時，常見的三種方式包括：吹氣測試、糞便檢體、與胃鏡取樣。",
       link: "/hpylori-test",
-      image: "https://jietrue.com/wp-content/uploads/2025/04/幽門螺旋桿菌檢查.png"
+      image: "https://jietrue.com/wp-content/uploads/2025/04/幽門螺旋桿菌檢查.png",
+      category: "腸胃保健"
     },
     {
       title: "減痛麻醉 vs 舒眠麻醉比較｜內視鏡鎮靜選擇介紹",
       excerpt: "進行無痛胃鏡或大腸鏡檢查前，該選哪種麻醉方式呢？傑初診所提供「減痛麻醉（Midazolam+Fentanyl）」與「舒眠麻醉（Propofol）」。",
       link: "/anesthesia-info",
-      image: "https://jietrue.com/wp-content/uploads/2025/04/傑初診所_減痛與舒眠麻醉衛教單.jpg"
+      image: "https://jietrue.com/wp-content/uploads/2025/04/傑初診所_減痛與舒眠麻醉衛教單.jpg",
+      category: "腸胃保健"
     },
     {
       title: "猛健樂 Mounjaro 減重針劑介紹｜中和減重門診",
       excerpt: "猛健樂（Mounjaro）是目前國際最受矚目的雙重腸泌素瘦瘦針，結合 GLP1 + GIP 雙重作用。",
       link: "/mounjaro-blog",
-      image: "https://jietrue.com/wp-content/uploads/2025/04/猛健樂注射筆操作流程.webp"
+      image: "https://jietrue.com/wp-content/uploads/2025/04/猛健樂注射筆操作流程.webp",
+      category: "減重新知"
     },
     {
       title: "腸胃炎症狀大解析：腸胃炎怎麼舒緩？7種方法一次看",
       excerpt: "突如其來的腹瀉、噁心或腹痛，可能都是腸胃炎的警訊！了解症狀與舒緩方法，讓您更安心面對腸胃不適。",
       link: "/gastroenteritis-symptoms-relief",
-      image: "https://jietrue.com/wp-content/uploads/2025/04/腸胃炎怎麼舒緩.png"
+      image: "https://jietrue.com/wp-content/uploads/2025/04/腸胃炎怎麼舒緩.png",
+      category: "腸胃保健"
     },
     {
       title: "便利商店也能完成低渣飲食？大腸鏡前懶人飲食推薦",
       excerpt: "面臨大腸鏡檢查，最困擾的就是「不知道該吃什麼」。其實，低渣飲食不需要特別下廚，台灣便利商店就能輕鬆搞定。",
       link: "/low-residue-convenience-food",
-      image: "https://jietrue.com/wp-content/uploads/2025/04/便利商店也能完成低渣飲食.png"
+      image: "https://jietrue.com/wp-content/uploads/2025/04/便利商店也能完成低渣飲食.png",
+      category: "腸胃保健"
+    },
+    {
+      title: "大腸鏡前低渣飲食怎麼吃？",
+      excerpt: "進行大腸鏡檢查前，需要進行低渣飲食來清空腸道，了解正確的飲食方式對檢查結果很重要。",
+      link: "/low-residue-diet",
+      image: "https://jietrue.com/wp-content/uploads/2025/04/刻利淨三餐精選組-1.jpg",
+      category: "腸胃保健"
+    },
+    {
+      title: "大腸鏡前清腸5問：清腸藥怎麼喝？",
+      excerpt: "大腸鏡檢查前的清腸準備是檢查成功的關鍵，了解正確的清腸藥服用方式。",
+      link: "/colonoscopy-prep",
+      image: "https://jietrue.com/wp-content/uploads/2025/04/ChatGPT-Image-Apr-3-2025-11_39_58-PM.png",
+      category: "腸胃保健"
+    },
+    {
+      title: "胃食道逆流的常見症狀有哪些？",
+      excerpt: "胃食道逆流是常見的消化系統疾病，了解症狀有助於及早發現和治療。",
+      link: "/gerd-symptoms",
+      image: "https://jietrue.com/wp-content/uploads/2025/03/胃食道逆流-胸痛.png",
+      category: "腸胃保健"
+    },
+    {
+      title: "膽結石是因為不愛喝水？",
+      excerpt: "膽結石的成因很多，不只是喝水不足，了解正確的預防方法很重要。",
+      link: "/gallstones-prevention",
+      image: "https://jietrue.com/wp-content/uploads/2025/03/膽結石blog.png",
+      category: "疾病預防"
+    },
+    {
+      title: "腸癌篩檢糞便檢查異常怎麼辦？",
+      excerpt: "糞便潛血檢查異常不一定是癌症，了解後續檢查步驟讓您安心面對。",
+      link: "/colon-cancer-screening",
+      image: "https://jietrue.com/wp-content/uploads/2025/03/腸癌篩檢糞便檢查異常怎麼辦.png",
+      category: "疾病預防"
     }
   ];
+
+  const filteredPosts = useMemo(() => {
+    return blogPosts.filter(post => {
+      const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory = selectedCategory === "全部" || post.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
 
   return (
     <>
@@ -88,11 +148,43 @@ const HealthInfo = () => {
             </div>
           </section>
 
+          {/* Search and Categories Section */}
+          <section className="py-8 border-b bg-muted/10">
+            <div className="container mx-auto px-4">
+              {/* Search Bar */}
+              <div className="relative max-w-md mx-auto mb-6">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Input
+                  type="text"
+                  placeholder="搜尋"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+              
+              {/* Category Buttons */}
+              <div className="flex flex-wrap justify-center gap-2">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className="min-w-[80px]"
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Blog Posts Grid */}
           <section className="py-16">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogPosts.map((post, index) => (
+                {filteredPosts.map((post, index) => (
                   <Card key={index} className="overflow-hidden">
                     <div className="aspect-video overflow-hidden">
                       <img 
