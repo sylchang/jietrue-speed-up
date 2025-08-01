@@ -1,6 +1,6 @@
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
-import { StickyActions } from "@/components/StickyActions";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import StickyActions from "@/components/StickyActions";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Helmet } from "react-helmet";
