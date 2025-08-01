@@ -76,35 +76,35 @@ const HealthInfo = () => {
     {
       title: "大腸鏡前低渣飲食怎麼吃？",
       excerpt: "進行大腸鏡檢查前，需要進行低渣飲食來清空腸道，了解正確的飲食方式對檢查結果很重要。",
-      link: "/low-residue-diet",
+      link: "https://jietrue.com/大腸鏡前低渣飲食怎麼吃/",
       image: "https://jietrue.com/wp-content/uploads/2025/04/刻利淨三餐精選組-1.jpg",
       category: "腸胃保健"
     },
     {
       title: "大腸鏡前清腸5問：清腸藥怎麼喝？",
       excerpt: "大腸鏡檢查前的清腸準備是檢查成功的關鍵，了解正確的清腸藥服用方式。",
-      link: "/colonoscopy-prep",
+      link: "https://jietrue.com/colonoscopy-prep-questions/",
       image: "https://jietrue.com/wp-content/uploads/2025/04/ChatGPT-Image-Apr-3-2025-11_39_58-PM.png",
       category: "腸胃保健"
     },
     {
       title: "胃食道逆流的常見症狀有哪些？",
       excerpt: "胃食道逆流是常見的消化系統疾病，了解症狀有助於及早發現和治療。",
-      link: "/gerd-symptoms",
+      link: "https://jietrue.com/gerd-symptoms-common/",
       image: "https://jietrue.com/wp-content/uploads/2025/03/胃食道逆流-胸痛.png",
       category: "腸胃保健"
     },
     {
       title: "膽結石是因為不愛喝水？",
       excerpt: "膽結石的成因很多，不只是喝水不足，了解正確的預防方法很重要。",
-      link: "/gallstones-prevention",
+      link: "https://jietrue.com/gallstones-dehydration-myths/",
       image: "https://jietrue.com/wp-content/uploads/2025/03/膽結石blog.png",
       category: "疾病預防"
     },
     {
       title: "腸癌篩檢糞便檢查異常怎麼辦？",
       excerpt: "糞便潛血檢查異常不一定是癌症，了解後續檢查步驟讓您安心面對。",
-      link: "/colon-cancer-screening",
+      link: "https://jietrue.com/colon-cancer-screening-abnormal/",
       image: "https://jietrue.com/wp-content/uploads/2025/03/腸癌篩檢糞便檢查異常怎麼辦.png",
       category: "疾病預防"
     }
