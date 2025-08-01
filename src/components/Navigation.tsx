@@ -14,7 +14,7 @@ const Navigation = () => {
     { href: "/about", label: "關於傑初" },
     { href: "/doctors", label: "醫師陣容" },
     { href: "/hours", label: "門診時間" },
-    { href: "/health-info", label: "衛教資訊" },
+    { href: "/blog", label: "衛教資訊" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
