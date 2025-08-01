@@ -120,7 +120,7 @@ const Hours = () => {
           </p><br></br>
           <div className="mb-12 shadow-elegant animate-fade-in rounded-2xl overflow-hidden">
             <img
-              src="../../public/images/傑初診所 門診時刻表 小圖.jpg"
+              src="/images/傑初診所 門診時刻表 小圖.jpg"
               alt="傑初診所門診時間表"
               className="w-full h-auto object-cover rounded-2xl"
               style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
