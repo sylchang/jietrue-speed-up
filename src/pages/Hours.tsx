@@ -109,17 +109,18 @@ const Hours = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">門診時間</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            專業醫師門診時間表，歡迎來電預約或線上掛號
-          </p>
+            專業醫師門診時間表，歡迎來電預約或線上掛號</p>
         </div>
       </section>
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Schedule Image instead of Table */}
+        <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+            本診所包含腸胃科（無痛胃鏡、大腸鏡、肝膽超音波）、皮膚科（濕疹、青春痘、落髮）與自費醫美（電波拉提、減重療程），門診時段分為早上、下午與夜間，服務中永和居民的健康需求。
+          </p><br></br>
           <div className="mb-12 shadow-elegant animate-fade-in rounded-2xl overflow-hidden">
             <img
-              src="https://jietrue.com/wp-content/uploads/2025/04/傑初診所-門診時刻表.jpeg"
+              src="../../public/images/傑初診所 門診時刻表 小圖.jpg"
               alt="傑初診所門診時間表"
               className="w-full h-auto object-cover rounded-2xl"
               style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
@@ -235,7 +236,23 @@ const Hours = () => {
                 className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
                 asChild
               >
-                <Link to="https://line.me/R/ti/p/@928ibhsy">LINE 預約</Link>
+                <Link to="https://line.me/R/ti/p/@928ibhsy">LINE預約</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                asChild
+              >
+                <Link to="https://pinmed.co/clinic/18ott42a">網頁預約</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                asChild
+              >
+                <Link to="https://jietrue.simplybook.asia/v2/#book">自費減重預約</Link>
               </Button>
                 <Button
                 size="lg"
@@ -243,7 +260,7 @@ const Hours = () => {
                 className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
                 asChild
               >
-                <Link to="/services">查看診療項目</Link>
+                <Link to="https://mainpi.com/query?i=3297">查看看診進度</Link>
               </Button>
               </div>
             </div>
