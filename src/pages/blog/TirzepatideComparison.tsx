@@ -16,7 +16,7 @@ const TirzepatideComparison = () => {
         <meta property="og:description" content="《新英格蘭醫學期刊》2024年最新研究揭示猛健樂(Tirzepatide)與善纖達(Semaglutide)在減重效果上的驚人差異！如果您身處永和、中和地區，並考慮使用瘦瘦針輔助減重，這篇文章絕對是您不可錯過的資訊！" />
         <meta property="og:url" content="https://jietrue.com/tirzepatide-semaglutide-weight-loss-comparison-yonghe-zhonghe/" />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://jietrue.com/wp-content/uploads/2025/05/猛健樂vs善纖達.jpg" />
+        <meta property="og:image" content="/images/MounjaroVsSaxenda.jpg" />
         <link rel="canonical" href="https://jietrue.com/tirzepatide-semaglutide-weight-loss-comparison-yonghe-zhonghe/" />
       </Helmet>
       
@@ -28,10 +28,10 @@ const TirzepatideComparison = () => {
           <section className="bg-gradient-to-b from-background to-muted/20 py-16">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-primary">
-                【減重突破】猛健樂 (Tirzepatide) vs 善纖達 (Semaglutide)：史上最強瘦瘦針對決，您選哪一個？
+                【減重突破】猛健樂 (Mounjaro) vs 善纖達 (Saxenda)：史上最強瘦瘦針對決，您選哪一個？
               </h1>
               <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-                您正在尋找最有效的減重方案嗎？《新英格蘭醫學期刊》2024年最新研究揭示了兩大減重藥物—— 猛健樂 (Tirzepatide) 與 善纖達 (Semaglutide) 在減重效果上的驚人差異！
+                您正在尋找最有效的減重方案嗎？《新英格蘭醫學期刊》2024年最新研究揭示了兩大減重藥物—— 猛健樂 (Mounjaro) 與 善纖達 (Saxenda) 在減重效果上的驚人差異！
               </p>
             </div>
           </section>
@@ -41,7 +41,7 @@ const TirzepatideComparison = () => {
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="prose prose-lg max-w-none">
                 <img 
-                  src="/images/猛健樂vs善纖達.jpg"
+                  src="/images/MounjaroVsSaxenda.jpg"
                   alt="猛健樂與善纖達減重效果大對決研究圖表"
                   className="w-full rounded-lg mb-8"
                 />
