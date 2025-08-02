@@ -22,6 +22,11 @@ import AnesthesiaInfo from "./pages/blog/AnesthesiaInfo";
 import MounjaroBlog from "./pages/blog/MounjaroBlog";
 import GastroenteritisRelief from "./pages/blog/GastroenteritisRelief";
 import LowResidueFoodBlog from "./pages/blog/LowResidueFoodBlog";
+import LowResidueDietGuide from "./pages/blog/LowResidueDietGuide";
+import ColonoscopyPrepGuide from "./pages/blog/ColonoscopyPrepGuide";
+import GerdSymptoms from "./pages/blog/GerdSymptoms";
+import GallstoneMyths from "./pages/blog/GallstoneMyths";
+import ColonCancerScreening from "./pages/blog/ColonCancerScreening";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +55,11 @@ const App = () => (
           <Route path="/mounjaro-blog" element={<MounjaroBlog />} />
           <Route path="/gastroenteritis-symptoms-relief" element={<GastroenteritisRelief />} />
           <Route path="/low-residue-convenience-food" element={<LowResidueFoodBlog />} />
+          <Route path="/low-residue-diet-guide" element={<LowResidueDietGuide />} />
+          <Route path="/colonoscopy-prep-guide" element={<ColonoscopyPrepGuide />} />
+          <Route path="/gerd-symptoms" element={<GerdSymptoms />} />
+          <Route path="/gallstones-myths" element={<GallstoneMyths />} />
+          <Route path="/colon-cancer-screening" element={<ColonCancerScreening />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
