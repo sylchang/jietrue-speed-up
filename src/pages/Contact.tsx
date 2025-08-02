@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 const Contact = () => {
   const contactInfo = {
     address: "新北市中和區景平路123號1樓",
-    phone: "02-8921-2345",
+    phone: "02-8231-6869",
     email: "info@jietrue.com",
     hours: "週一至週六 08:30-21:00",
     parking: "診所附近有多個付費停車場",

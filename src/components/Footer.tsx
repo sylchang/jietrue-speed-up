@@ -29,7 +29,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">聯絡資訊</h3>
             <div className="space-y-2">
               <a
-                href="tel:02-89212345"
+                href="tel:02-82316869"
                 className="flex items-center space-x-2 text-sm hover:opacity-80 transition-opacity"
               >
                 <Phone className="w-4 h-4" />

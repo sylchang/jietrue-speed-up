@@ -191,7 +191,7 @@ const About = () => {
                 <Phone className="w-6 h-6" />
                 <div className="text-left">
                   <div className="font-semibold">預約專線</div>
-                  <div className="text-primary-foreground/90">02-8921-2345</div>
+                  <div className="text-primary-foreground/90">02-8231-6869</div>
                 </div>
               </div>
               <div className="flex items-center justify-center space-x-3">

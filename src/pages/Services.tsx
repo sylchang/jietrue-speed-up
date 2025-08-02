@@ -39,7 +39,8 @@ const Services = () => {
           description: "使用Fujifilm V8000內視鏡，搭配無痛/舒眠麻醉進行無痛胃鏡與大腸鏡，快速、安全、舒適。",
           features: ["Fujifilm V8000內視鏡", "舒眠麻醉", "無痛無感"],
           // 對應: painless-endoscopyicon.png
-          icon: <ServiceIcon src="/icon/painless-endoscopy-icon.png" alt="Painless Endoscopy" />
+          icon: <ServiceIcon src="/icon/painless-endoscopy-icon.png" alt="Painless Endoscopy" />,
+          learnMoreLink: "/painless-endoscopy" 
         },
         {
           name: "AI 智慧內視鏡",
@@ -47,7 +48,8 @@ const Services = () => {
           features: ["AI智慧輔助", "早期病變辨識", "提高準確率"],
           highlight: true,
           // 對應: AI 智慧內視鏡icon.png
-          icon: <ServiceIcon src="/icon/ai-endoscopy-icon.png" alt="AI Endoscopy" />
+          icon: <ServiceIcon src="/icon/ai-endoscopy-icon.png" alt="AI Endoscopy" />,
+          learnMoreLink: "/ai-endoscopy"
         },
         {
           name: "高解析腹部超音波檢查",
@@ -115,9 +117,9 @@ const Services = () => {
       color: "bg-accent",
       services: [
         {
-          name: "GLP-1 減重療程",
-          description: "衛服部核准減重藥 、瘦瘦針、司美格魯肽、善纖達、猛健樂等新一代減重藥物治療，搭配專業諮詢。",
-          features: ["專業評估", "個人化療程", "定期追蹤", "InBody 分析"],
+          name: "減重藥物、針劑療程",
+          description: "衛服部核准減重藥 、瘦瘦針、司美格魯肽、善纖達、猛健樂GLP-1等減重藥物治療，搭配專業諮詢。",
+          features: ["專業評估", "個人化療程", "定期追蹤", "InBody分析", "猛健樂"],
           highlight: true,
           // 對應: 減重與代謝管理icon.png
           icon: <ServiceIcon src="/icon/glp-1-weight-loss-program-icon.png" alt="GLP-1 Weight Loss" />
@@ -228,7 +230,7 @@ const Services = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-4">診療項目</h1>
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              提供專業的肝膽腸胃科內科、減重與代謝管理、皮膚科與醫學美容服務
+              傑初診所為中永和地區專業腸胃肝膽、減重與代謝管理、皮膚科與醫學美容診所，提供無痛胃鏡、AI 內視鏡、肝膽超音波、青春痘與落髮治療、電波拉提、GLP1減重與營養指導。服務涵蓋永和、中和與新店周邊地區，並由前北榮醫師與專科團隊主導診療。
             </p>
           </div>
         </section>
@@ -247,11 +249,13 @@ const Services = () => {
                     <h2 className="text-3xl font-bold text-medical-text mb-2">{category.category}</h2>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* 這是一個水平滾動容器，包含所有服務卡片 */}
+                  <div className="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-4 hide-scrollbar">
                     {category.services.map((service, serviceIndex) => (
                       <Card
                         key={service.name}
-                        className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 ${service.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
+                        // 使用 flex-shrink-0 和 w-80 設定卡片固定寬度，並加入 snap-center 實現滑動吸附
+                        className={`flex-shrink-0 w-80 snap-center group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 ${service.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
                           }`}
                       >
                         <CardHeader className="pb-4 flex flex-col items-center">
@@ -259,12 +263,12 @@ const Services = () => {
                             {service.icon}
                           </div>
                           <div className="flex items-center justify-between w-full">
-                            <CardTitle className="text-lg text-medical-text group-hover:text-primary transition-colors text-center w-full">
+                            <CardTitle className="text-lg text-medical-text group-hover:text-primary-foreground transition-colors text-center w-full">
                               {service.name}
                             </CardTitle>
                           </div>
                           {service.highlight && (
-                            <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 mt-2">
+                            <Badge variant="outline" className="bg-primary/10 text-accent border-primary/20 mt-2">
                               <Star className="w-3 h-3 mr-1" />
                               推薦
                             </Badge>
@@ -277,18 +281,21 @@ const Services = () => {
                           <div className="space-y-2">
                             {service.features.map((feature, featureIndex) => (
                               <div key={featureIndex} className="flex items-center space-x-2">
-                                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                                <CheckCircle className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                                 <span className="text-sm text-foreground">{feature}</span>
                               </div>
                             ))}
                           </div>
                           <div className="mt-6">
-                            <Link to={`/services/${encodeURIComponent(service.name)}`} className="block w-full">
-                              <Button variant="ghost" className="w-full justify-between group-hover:text-primary transition-colors">
-                                <span>了解更多</span>
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                              </Button>
-                            </Link>
+                            {/* 只有當 service.learnMoreLink 存在時才顯示此連結 */}
+                            {service.learnMoreLink && (
+                              <Link to={service.learnMoreLink} className="block w-full">
+                                <Button variant="ghost" className="w-full justify-center text-btn-hover group-hover:text-primary-foreground transition-colors">
+                                  <span>了解更多</span>
+                                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                              </Link>
+                            )}
                           </div>
                         </CardContent>
                       </Card>

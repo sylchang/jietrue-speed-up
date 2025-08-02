@@ -53,11 +53,11 @@ const Navigation = () => {
             ))}
             <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-border">
               <a
-                href="tel:02-89212345"
+                href="tel:02-82316869"
                 className="flex items-center space-x-1 text-foreground hover:text-muted-foreground transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">02-8921-2345</span>
+                <span className="text-sm font-medium">02-8231-6869</span>
               </a>
               <Button variant="outline" size="sm" asChild>
                 <Link to="https://line.me/R/ti/p/@928ibhsy?oat_content=url&ts=03250025">預約掛號</Link>
@@ -97,11 +97,11 @@ const Navigation = () => {
             ))}
             <div className="pt-2 border-t border-border">
               <a
-                href="tel:02-89212345"
+                href="tel:02-82316869"
                 className="flex items-center space-x-2 px-3 py-2 text-muted-foreground"
               >
                 <Phone className="w-4 h-4" />
-                <span>02-8921-2345</span>
+                <span>02-8231-6869</span>
               </a>
               <Button variant="outline" size="sm" className="mx-3 mt-2" asChild>
                 <Link to="https://line.me/R/ti/p/@928ibhsy?oat_content=url&ts=03250025">預約掛號</Link>
