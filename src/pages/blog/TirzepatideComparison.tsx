@@ -41,7 +41,7 @@ const TirzepatideComparison = () => {
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="prose prose-lg max-w-none">
                 <img 
-                  src="https://jietrue.com/wp-content/uploads/2025/05/猛健樂vs善纖達.jpg"
+                  src="/images/猛健樂vs善纖達.jpg"
                   alt="猛健樂與善纖達減重效果大對決研究圖表"
                   className="w-full rounded-lg mb-8"
                 />
