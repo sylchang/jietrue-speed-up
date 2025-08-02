@@ -115,7 +115,7 @@ const Hours = () => {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             本診所包含腸胃科（無痛胃鏡、大腸鏡、肝膽超音波）、皮膚科（濕疹、青春痘、落髮）與自費醫美（電波拉提、減重療程），門診時段分為早上、下午與夜間，服務中永和居民的健康需求。
           </p><br></br>
           <div className="mb-12 shadow-elegant animate-fade-in rounded-2xl overflow-hidden">
@@ -231,37 +231,37 @@ const Hours = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                size="lg"
-                variant="secondary"
-                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
-                asChild
-              >
-                <Link to="https://line.me/R/ti/p/@928ibhsy">LINE預約</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
-                asChild
-              >
-                <Link to="https://pinmed.co/clinic/18ott42a">網頁預約</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
-                asChild
-              >
-                <Link to="https://jietrue.simplybook.asia/v2/#book">自費減重預約</Link>
-              </Button>
+                  size="lg"
+                  variant="secondary"
+                  className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                  asChild
+                >
+                  <Link to="https://line.me/R/ti/p/@928ibhsy">LINE預約</Link>
+                </Button>
                 <Button
-                size="lg"
-                variant="secondary"
-                className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
-                asChild
-              >
-                <Link to="https://mainpi.com/query?i=3297">查看看診進度</Link>
-              </Button>
+                  size="lg"
+                  variant="secondary"
+                  className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                  asChild
+                >
+                  <Link to="https://pinmed.co/clinic/18ott42a">網頁預約</Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                  asChild
+                >
+                  <Link to="https://jietrue.simplybook.asia/v2/#book">自費減重預約</Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-[hsl(var(--btn))] text-destructive-foreground hover:bg-[hsl(var(--btn-hover))]"
+                  asChild
+                >
+                  <Link to="https://mainpi.com/query?i=3297">查看看診進度</Link>
+                </Button>
               </div>
             </div>
           </div>

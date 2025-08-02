@@ -18,10 +18,10 @@ const HealthInfo = () => {
 
   const blogPosts = [
     {
-      title: "【減重突破】猛健樂 (Tirzepatide) vs 善纖達 (Semaglutide)：史上最強瘦瘦針對決",
-      excerpt: "《新英格蘭醫學期刊》2024年最新研究揭示猛健樂(Tirzepatide)與善纖達(Semaglutide)在減重效果上的驚人差異！",
+      title: "【減重突破】猛健樂 (Mounjaro) vs 善纖達 (Semaglutide)：史上最強瘦瘦針對決",
+      excerpt: "《新英格蘭醫學期刊》2024年最新研究揭示猛健樂(Mounjaro)與善纖達(Semaglutide)在減重效果上的驚人差異！",
       link: "/tirzepatide-semaglutide-weight-loss-comparison-yonghe-zhonghe",
-      image: "https://jietrue.com/wp-content/uploads/2025/05/猛健樂vs善纖達.jpg",
+      image: "/images/MounjaroVsSaxenda.jpg",
       category: "減重新知"
     },
     {
