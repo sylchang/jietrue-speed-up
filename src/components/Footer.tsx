@@ -9,11 +9,11 @@ const Footer = () => {
           {/* Logo and Clinic Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-                <div className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center">
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                </div>
-              </div>
+              <img
+                src="/logo-removebg.png"
+                alt="傑初診所 Logo"
+                className="h-10 w-auto"
+              />
               <div className="flex flex-col">
                 <span className="text-lg font-bold">傑初診所</span>
                 <span className="text-xs opacity-80">JIETRUE CLINIC</span>
@@ -33,18 +33,28 @@ const Footer = () => {
                 className="flex items-center space-x-2 text-sm hover:opacity-80 transition-opacity"
               >
                 <Phone className="w-4 h-4" />
-                <span>02-8921-2345</span>
+                <span>02-8231-6869</span>
               </a>
               <div className="flex items-center space-x-2 text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>台北市中山區復興北路</span>
+                <span>新北市中和區中安街102號</span>
               </div>
               <a
-                href="mailto:info@jietrueclinic.com"
+                href="https://line.me/R/ti/p/@928ibhsy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-sm hover:opacity-80 transition-opacity"
               >
-                <Mail className="w-4 h-4" />
-                <span>info@jietrueclinic.com</span>
+                {/* 這是新的 LINE 圖標，它的顏色會繼承父元素的文字顏色 */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path d="M21 12.032c0 4.965-4.48 8.968-10.001 8.968-1.57 0-3.048-.372-4.382-1.013L2 22l1.096-4.505C1.492 15.65 0 13.914 0 12.032 0 7.067 4.48 3.064 10.001 3.064c5.521 0 10.001 4.003 10.999 8.968zm-5.698-1.928h-1.39v-1.353c0-.398-.316-.714-.714-.714-.399 0-.714.316-.714.714v1.353h-1.391c-.398 0-.714.315-.714.714 0 .398.316.714.714.714h1.391v1.354c0 .397.316.713.714.713.398 0 .714-.316.714-.713v-1.354h1.39c.398 0 .714-.316.714-.714 0-.399-.316-.714-.714-.714z" />
+                </svg>
+                <span>@928ibhsy</span>
               </a>
             </div>
           </div>
@@ -59,11 +69,14 @@ const Footer = () => {
               <Link to="/doctors" className="hover:opacity-80 transition-opacity">
                 醫師陣容
               </Link>
+              <Link to="/news" className="hover:opacity-80 transition-opacity">
+                最新消息
+              </Link>
               <Link to="/hours" className="hover:opacity-80 transition-opacity">
                 門診時間
               </Link>
-              <Link to="/contact" className="hover:opacity-80 transition-opacity">
-                預約掛號
+              <Link to="/blog" className="hover:opacity-80 transition-opacity">
+                衛教資訊
               </Link>
             </div>
           </div>
@@ -72,7 +85,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="text-sm opacity-80">
-            © 2024 傑初診所 JIETRUE CLINIC. All rights reserved.
+            © 2025 傑初診所 JIETRUE CLINIC. All rights reserved.
           </p>
         </div>
       </div>

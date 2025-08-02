@@ -25,11 +25,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-hero rounded-full flex items-center justify-center">
-              <div className="w-6 h-6 bg-primary-foreground rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-primary rounded-full"></div>
-              </div>
-            </div>
+          <img 
+    src="/logo-removebg.png" 
+    alt="傑初診所 Logo" 
+    className="h-10 w-auto" // 調整圖片大小
+  />
             <div className="flex flex-col">
               <span className="text-lg font-bold text-medical-text">傑初診所</span>
               <span className="text-xs text-muted-foreground">JIETRUE CLINIC</span>
