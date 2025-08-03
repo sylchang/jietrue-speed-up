@@ -1,12 +1,13 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StickyActions from "@/components/StickyActions";
+import SeoHead from "@/components/SeoHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, Calendar, Phone, MapPin, AlertCircle, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import React, { useEffect } from 'react'; // Import React and useEffect
+import React, { useEffect } from 'react';
 
 const Hours = () => {
   // Original schedule data is no longer needed and has been removed as requested.
@@ -52,57 +53,45 @@ const Hours = () => {
     };
   }, []);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "傑初診所有哪些門診時段？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "上午 08:30-12:00、下午 14:00-17:00、晚上 18:00-21:00（週一至週五提供夜診）。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "傑初診所提供哪些科別門診？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "傑初診所門診涵蓋中和與永和地區的腸胃科、皮膚科、內科慢性病、自費醫美與減重門診等。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "是否可以線上預約門診？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以，您可以透過 LINE 官方帳號、PinMed 或 SimplyBook 系統線上預約一般或自費門診。"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gradient-card">
+      <SeoHead 
+        title="傑初診所門診時間｜中永和腸胃科｜皮膚科｜醫美減重門診"
+        description="查詢傑初診所門診時間表，涵蓋中永和腸胃科、永和皮膚科與中和醫美時段安排。提供無痛胃鏡、肝膽超音波、青春痘治療與減重門診，歡迎線上預約。"
+        schema={faqSchema}
+      />
       <Navigation />
-      {/* SEO and Head content - Typically managed by a dedicated <Head> component or layout in frameworks like Next.js */}
-      {/* For direct conversion, placed here */}
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>傑初診所門診時間｜中永和腸胃科｜皮膚科｜醫美減重門診</title>
-        <meta name="description" content="查詢傑初診所門診時間表，涵蓋中永和腸胃科、永和皮膚科與中和醫美時段安排。提供無痛胃鏡、肝膽超音波、青春痘治療與減重門診，歡迎線上預約。" />
-
-        {/* SEO FAQ Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "傑初診所有哪些門診時段？",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "上午 08:30-12:00、下午 14:00-17:00、晚上 18:00-21:00（週一至週五提供夜診）。"
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "傑初診所提供哪些科別門診？",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "傑初診所門診涵蓋中和與永和地區的腸胃科、皮膚科、內科慢性病、自費醫美與減重門診等。"
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "是否可以線上預約門診？",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以，您可以透過 LINE 官方帳號、PinMed 或 SimplyBook 系統線上預約一般或自費門診。"
-                  }
-                }
-              ]
-            })
-          }}
-        />
-
-        {/* Google Fonts */}
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-      </head>
 
       {/* Header */}
       <section className="bg-gradient-hero text-primary-foreground py-16">
