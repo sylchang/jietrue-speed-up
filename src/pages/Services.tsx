@@ -254,8 +254,8 @@ const Services = () => {
                     {category.services.map((service, serviceIndex) => (
                       <Card
                         key={service.name}
-                        // 使用 flex-shrink-0 和 w-80 設定卡片固定寬度，並加入 snap-center 實現滑動吸附
-                        className={`flex-shrink-0 w-80 snap-center group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 ${service.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
+                        // 使用 flex-shrink-0 和 w-64 設定卡片固定寬度，並加入 snap-center 實現滑動吸附
+                        className={`flex-shrink-0 w-64 snap-center group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 ${service.highlight ? 'ring-2 ring-primary/20 shadow-medical' : ''
                           }`}
                       >
                         <CardHeader className="pb-4 flex flex-col items-center">

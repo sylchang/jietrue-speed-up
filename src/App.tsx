@@ -27,6 +27,7 @@ import ColonoscopyPrepGuide from "./pages/blog/ColonoscopyPrepGuide";
 import GerdSymptoms from "./pages/blog/GerdSymptoms";
 import GallstoneMyths from "./pages/blog/GallstoneMyths";
 import ColonCancerScreening from "./pages/blog/ColonCancerScreening";
+import PainlessEndoscopy from "./pages/service/PainlessEndoscopy";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,9 @@ const App = () => (
           <Route path="/gerd-symptoms" element={<GerdSymptoms />} />
           <Route path="/gallstones-myths" element={<GallstoneMyths />} />
           <Route path="/colon-cancer-screening" element={<ColonCancerScreening />} />
+          
+          {/* Service page routes */}
+          <Route path="/painless-endoscopy" element={<PainlessEndoscopy />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
