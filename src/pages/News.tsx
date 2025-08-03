@@ -16,7 +16,7 @@ const News = () => {
       date: "2025/5/26",
       category: "健檢方案",
       image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_400,h_300/https://jietrue.com/wp-content/uploads/2025/05/maypromotion.jpg",
-      link: "https://jietrue.com/傑初診所-全方位腸胃免疫健檢方案/"
+      link: "/news/comprehensive-gastro-checkup"
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const News = () => {
       date: "2025/4/28",
       category: "醫美優惠",
       image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_400,h_300/https://jietrue.com/wp-content/uploads/2025/04/IMG_5287.jpg",
-      link: "https://jietrue.com/2025-母親節醫美專案/"
+      link: "/news/mothers-day-2025-aesthetics"
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const News = () => {
       date: "2025/4/16",
       category: "健檢優惠",
       image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_400,h_300/https://jietrue.com/wp-content/uploads/2025/04/%E6%AF%8D%E8%A6%AA%E7%AF%80%E5%84%AA%E6%83%A0.jpg",
-      link: "https://jietrue.com/母親節專屬健檢優惠/"
+      link: "/news/mothers-day-2025-checkup"
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const News = () => {
       date: "2025/3/15",
       category: "減重門診",
       image: "https://jietrue.com/wp-content/uploads/2025/03/傑初診所-減重與代謝管理-中和減重門診-瘦瘦針-胃肉毒減重-GLP1.jpg",
-      link: "https://jietrue.com/weight-management-clinic/"
+      link: "/news/weight-management-clinic"
     }
   ];
 
@@ -97,10 +97,10 @@ const News = () => {
                       {item.excerpt}
                     </p>
                     <Button variant="outline" className="w-full group" asChild>
-                      <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      <Link to={item.link}>
                         查看詳情
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </a>
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>

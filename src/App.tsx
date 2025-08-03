@@ -29,6 +29,12 @@ import GallstoneMyths from "./pages/blog/GallstoneMyths";
 import ColonCancerScreening from "./pages/blog/ColonCancerScreening";
 import PainlessEndoscopy from "./pages/service/PainlessEndoscopy";
 
+// News pages
+import ComprehensiveGastroCheckup from "./pages/news/ComprehensiveGastroCheckup";
+import MothersDay2025Aesthetics from "./pages/news/MothersDay2025Aesthetics";
+import MothersDay2025Checkup from "./pages/news/MothersDay2025Checkup";
+import WeightManagementClinic from "./pages/news/WeightManagementClinic";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -64,6 +70,12 @@ const App = () => (
           
           {/* Service page routes */}
           <Route path="/painless-endoscopy" element={<PainlessEndoscopy />} />
+          
+          {/* News page routes */}
+          <Route path="/news/comprehensive-gastro-checkup" element={<ComprehensiveGastroCheckup />} />
+          <Route path="/news/mothers-day-2025-aesthetics" element={<MothersDay2025Aesthetics />} />
+          <Route path="/news/mothers-day-2025-checkup" element={<MothersDay2025Checkup />} />
+          <Route path="/news/weight-management-clinic" element={<WeightManagementClinic />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
