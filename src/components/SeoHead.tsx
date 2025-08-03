@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 
 // 定義 SeoHead 元件的 Props 介面
@@ -17,28 +17,26 @@ interface SeoHeadProps {
  */
 const SeoHead: React.FC<SeoHeadProps> = ({ title, description, schema }) => {
   return (
-    <HelmetProvider>
-      <Helmet>
-        {/* 設定頁面標題 */}
-        <title>{title}</title>
+    <Helmet>
+      {/* 設定頁面標題 */}
+      <title>{title}</title>
 
-        {/* 設定元描述 */}
-        <meta name="description" content={description} />
+      {/* 設定元描述 */}
+      <meta name="description" content={description} />
 
-        {/* 導入 Google Fonts */}
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+      {/* 導入 Google Fonts */}
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-        {/* 如果有提供 schema，則將其添加到頁面中 */}
-        {schema && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(schema),
-            }}
-          />
-        )}
-      </Helmet>
-    </HelmetProvider>
+      {/* 如果有提供 schema，則將其添加到頁面中 */}
+      {schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      )}
+    </Helmet>
   );
 };
 
