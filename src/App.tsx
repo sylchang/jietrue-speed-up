@@ -39,12 +39,12 @@ import WeightManagementClinic from "./pages/news/WeightManagementClinic";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/news" element={<News />} />
@@ -82,10 +82,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-    </HelmetProvider>
-  </QueryClientProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
