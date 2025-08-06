@@ -23,6 +23,9 @@ const SeoHead: React.FC<SeoHeadProps> = ({ title, description, schema }) => {
 
       {/* 設定元描述 */}
       <meta name="description" content={description} />
+      
+      {/* 允許搜尋引擎索引 */}
+      <meta name="robots" content="index, follow" />
 
       {/* 導入 Google Fonts */}
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
