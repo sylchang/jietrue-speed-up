@@ -114,6 +114,61 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Special Services Section */}
+        <section className="py-20 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold text-medical-text mb-4">
+                本院特設
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                專業設備與技術，提供更優質的醫療服務體驗
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="p-6 hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
+                <h3 className="text-xl font-bold text-medical-text mb-4">無痛胃腸鏡檢查</h3>
+                <div className="space-y-3 text-medical-text">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <div className="font-medium">舒適安全的內視鏡檢查</div>
+                      <div className="text-sm text-muted-foreground">靜脈麻醉技術，無痛無負擔</div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
+                <h3 className="text-xl font-bold text-medical-text mb-4">高階超音波檢查</h3>
+                <div className="space-y-3 text-medical-text">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <div className="font-medium">肝纖維化掃描、腹部超音波</div>
+                      <div className="text-sm text-muted-foreground">精準診斷，即時檢測</div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-elegant transition-all duration-300 hover:-translate-y-2">
+                <h3 className="text-xl font-bold text-medical-text mb-4">專業醫美設備</h3>
+                <div className="space-y-3 text-medical-text">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <div className="font-medium">雷射皮秒、電音波拉提</div>
+                      <div className="text-sm text-muted-foreground">先進設備，專業療程</div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Doctors Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

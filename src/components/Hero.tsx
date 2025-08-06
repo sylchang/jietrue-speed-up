@@ -72,62 +72,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Featured Services */}
-          <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <Card className="p-6 bg-white/95 backdrop-blur-sm shadow-elegant border-0">
-              <h3 className="text-xl font-bold text-medical-text mb-4">主治項目</h3>
-              <div className="space-y-3 text-medical-text">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="font-medium">腸胃科專科</div>
-                    <div className="text-sm text-muted-foreground">胃食道逆流、胃/十二指腸潰瘍、大腸息肉</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="font-medium">皮膚科診療</div>
-                    <div className="text-sm text-muted-foreground">青春痘、濕疹、落髮、皮膚腫瘤</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="font-medium">醫美療程</div>
-                    <div className="text-sm text-muted-foreground">電波拉提、音波緊緻、雷射美容</div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white/95 backdrop-blur-sm shadow-elegant border-0">
-              <h3 className="text-xl font-bold text-medical-text mb-4">本院特設</h3>
-              <div className="space-y-3 text-medical-text">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="font-medium">無痛胃腸鏡檢查</div>
-                    <div className="text-sm text-muted-foreground">舒適安全的內視鏡檢查</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="font-medium">高階超音波檢查</div>
-                    <div className="text-sm text-muted-foreground">肝纖維化掃描、腹部超音波</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="font-medium">專業醫美設備</div>
-                    <div className="text-sm text-muted-foreground">雷射皮秒、電音波拉提</div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
