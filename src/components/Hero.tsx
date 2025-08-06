@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-hero text-primary-foreground overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-black/10"></div>
+    <section className="relative text-primary-foreground overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/images/傑初診所 減重與代謝管理 中和減重門診 瘦瘦針 胃肉毒減重 GLP1.jpg')` }}
+      ></div>
+      <div className="absolute inset-0 bg-black/40"></div>
       <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-white/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
       
