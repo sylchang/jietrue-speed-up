@@ -70,6 +70,59 @@ const Index = () => {
       <main className="flex-1">
         <Hero />
         
+        {/* Clinic Introduction */}
+        <section className="py-16 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-medical-text mb-4">
+              傑初診所
+              <span className="block text-2xl lg:text-3xl font-normal text-muted-foreground mt-2">
+                中永和腸胃科與皮膚科專科診所
+              </span>
+            </h1>
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
+              提供專業的無痛胃鏡檢查、肝膽超音波診斷、皮膚科治療與醫美療程，
+              守護您和家人的健康，讓專業成為您的安心選擇。
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                variant="default"
+                asChild
+              >
+                <Link to="/contact">線上預約掛號</Link>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                asChild
+              >
+                <Link to="/services">了解診療項目</Link>
+              </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-2xl mx-auto">
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Heart className="w-5 h-5 text-primary" />
+                <span className="text-sm">專業醫療</span>
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Shield className="w-5 h-5 text-primary" />
+                <span className="text-sm">安全無痛</span>
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Award className="w-5 h-5 text-primary" />
+                <span className="text-sm">資深經驗</span>
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Users className="w-5 h-5 text-primary" />
+                <span className="text-sm">在地信賴</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* Features Section */}
         <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
