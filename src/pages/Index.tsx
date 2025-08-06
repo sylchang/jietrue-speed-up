@@ -24,27 +24,27 @@ const Index = () => {
   const features = [
     {
       icon: <Stethoscope className="w-8 h-8" />,
-      title: "腸胃科專科",
-      description: "專業的消化系統疾病診療，包含胃食道逆流、胃潰瘍、大腸息肉等治療",
-      services: ["無痛胃鏡", "大腸鏡檢查", "腹部超音波", "幽門螺旋桿菌檢測"]
+      title: "肝膽腸胃科內科",
+      description: "專業的消化系統疾病診療，提供無痛胃鏡、AI智慧內視鏡檢查與腹部超音波診斷",
+      services: ["無痛胃鏡", "AI智慧內視鏡", "腹部超音波", "幽門螺旋桿菌檢測"]
     },
     {
-      icon: <Eye className="w-8 h-8" />,
-      title: "皮膚科專科", 
-      description: "資深皮膚科醫師提供青春痘、濕疹、落髮等皮膚疾病的專業治療",
-      services: ["青春痘治療", "濕疹皮膚炎", "落髮治療", "皮膚腫瘤"]
+      icon: <Heart className="w-8 h-8" />,
+      title: "減重與代謝管理", 
+      description: "提供GLP-1瘦瘦針、內視鏡減重、營養諮詢等綜合減重療程與代謝症候群管理",
+      services: ["GLP-1減重療程", "內視鏡減重", "營養諮詢", "代謝症候群管理"]
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "無痛檢查",
-      description: "採用先進的無痛檢查技術，讓您在舒適安全的環境中完成健康檢查",
-      services: ["靜脈麻醉", "高清內視鏡", "專業監測", "即時診斷"]
+      title: "皮膚科",
+      description: "資深皮膚科醫師提供青春痘、濕疹、落髮等皮膚疾病的專業診療",
+      services: ["青春痘治療", "濕疹皮膚炎", "落髮治療", "皮膚腫瘤檢查"]
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "醫學美容",
-      description: "專業的醫美療程，包含電波拉提、音波緊緻等非侵入性美容治療",
-      services: ["電波拉提", "音波緊緻", "雷射美容", "微整形"]
+      description: "專業的醫美療程，包含電波拉提、音波緊緻、雷射皮秒等非侵入性美容治療",
+      services: ["電波拉提", "音波緊緻", "雷射皮秒", "微整形注射"]
     }
   ];
 
