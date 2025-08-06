@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/images/傑初診所 減重與代謝管理 中和減重門診 瘦瘦針 胃肉毒減重 GLP1.jpg')` }}
+        style={{ backgroundImage: `url('/images/傑初診所4.png')` }}
       ></div>
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-float"></div>
