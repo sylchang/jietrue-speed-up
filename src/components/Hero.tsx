@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative text-primary-foreground overflow-hidden h-[50vh] md:h-[60vh] lg:h-[70vh]">
+    <section className="relative text-primary-foreground overflow-hidden w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[24/9]">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
