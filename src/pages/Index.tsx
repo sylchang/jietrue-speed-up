@@ -84,22 +84,6 @@ const Index = () => {
               守護您和家人的健康，讓專業成為您的安心選擇。
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="default"
-                asChild
-              >
-                <Link to="/contact">線上預約掛號</Link>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                asChild
-              >
-                <Link to="/services">了解診療項目</Link>
-              </Button>
-            </div>
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-2xl mx-auto">
