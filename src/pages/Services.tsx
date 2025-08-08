@@ -40,7 +40,31 @@ const Services = () => {
           features: ["Fujifilm V8000內視鏡", "舒眠麻醉", "無痛無感"],
           // 對應: painless-endoscopyicon.png
           icon: <ServiceIcon src="/icon/painless-endoscopy-icon.png" alt="Painless Endoscopy" />,
-          learnMoreLink: "/painless-endoscopy" 
+        learnMoreLink: "/painless-endoscopy"
+      },
+      {
+        name: "AI 智慧內視鏡",
+        description: "導入Fujifilm CAD EYE人工智慧輔助內視鏡，精準辨識早期病變，提高檢查準確率。",
+        features: [
+          "AI 實時輔助偵測",
+          "判讀腺瘤準確率達 95%",
+          "即時標記病灶位置",
+          "減少遺漏風險"
+        ],
+        icon: "/icon/ai-endoscopy-icon.png",
+        learnMoreLink: "/ai-endoscopy"
+      },
+      {
+        name: "高解析腹部超音波檢查",
+        description: "使用 Fujifilm Arietta 65 彩色超音波，檢查肝膽胰脾腎臟與甲狀腺，精準偵測病灶。",
+        features: [
+          "醫學中心等級設備",
+          "無痛無輻射檢查",
+          "肝膽胰脾腎甲狀腺全面檢查",
+          "早期發現疾病"
+        ],
+        icon: "/icon/abdominal-ultrasound-icon.png",
+        learnMoreLink: "/ultrasound"
         },
         {
           name: "AI 智慧內視鏡",
